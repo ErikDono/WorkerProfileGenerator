@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1588205315489" clover="3.2.0">
+  <project timestamp="1588205315489" name="All files">
+    <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5" elements="19" coveredelements="15" complexity="0" loc="12" ncloc="12" packages="1" files="4" classes="4"/>
+    <file name="Employee.js" path="/Users/ErikDonovan/Desktop/CODE/classwork/ProfileCreator/Develop/lib/Employee.js">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <line num="4" count="8" type="stmt"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
+      <line num="7" count="8" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+    </file>
+    <file name="Engineer.js" path="/Users/ErikDonovan/Desktop/CODE/classwork/ProfileCreator/Develop/lib/Engineer.js">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+    </file>
+    <file name="Intern.js" path="/Users/ErikDonovan/Desktop/CODE/classwork/ProfileCreator/Develop/lib/Intern.js">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+    </file>
+    <file name="Manager.js" path="/Users/ErikDonovan/Desktop/CODE/classwork/ProfileCreator/Develop/lib/Manager.js">
+      <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
