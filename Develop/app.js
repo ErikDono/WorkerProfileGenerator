@@ -21,9 +21,7 @@ const Team = [
 function init() {
     function manager() {
         inquirer.prompt(managerQuestions).then(answers => {
-            console.log(answers.officeNumber)
             const employee = new Manager(answers.name, answers.email, answers.ID, answers.officeNumber)
-            console.log(employee.getOfficeNumber())
             Team.push(employee)
 
 
@@ -35,30 +33,30 @@ function init() {
 
                         function intern() {
                             inquirer.prompt(internQuestions).then(answers => {
-                                console.log(answers.school)
+
                                 const employee = new Intern(answers.name, answers.email, answers.ID, answers.school)
-                                console.log(employee.getSchool())
+
                                 Team.push(employee)
                                 if (answers.choice === true) {
                                     mainQuestions()
                                 }
                                 else {
-                                    fs.writeFileSync("team.html", render(Team))
+                                    fs.writeFileSync("./Output/team.html", render(Team), function (err) { if (err) throw (err) })
                                 }
                             })
 
                         }
                         function engineer() {
                             inquirer.prompt(engineerQuestions).then(answers => {
-                                console.log(answers.gitHub)
-                                const employee = new Engineer(answers.name, answers.email, answers.ID, answers.gitHub)
-                                console.log(employee.getGithub())
+
+                                const employee = new Engineer(answers.name, answers.email, answers.ID, answers.github)
+
                                 Team.push(employee)
                                 if (answers.choice === true) {
                                     mainQuestions()
                                 }
                                 else {
-                                    fs.writeFileSync("team.html", render(Team))
+                                    fs.writeFileSync("./Output/team.html", render(Team), function (err) { if (err) throw (err) })
                                 }
                             })
 
@@ -71,7 +69,7 @@ function init() {
                             engineer()
                         }
                         else {
-                            fs.writeFileSync("team.html", render(Team))
+                            fs.writeFileSync("./Output/team.html", render(Team), function (err) { if (err) throw (err) })
                         }
 
                     })
@@ -80,7 +78,7 @@ function init() {
                 mainQuestions()
 
             } else {
-                fs.writeFileSync("team.html", render(Team))
+                fs.writeFileSync("./Output/team.html", render(Team), function (err) { if (err) throw (err) })
             }
 
         }).catch(err => err)

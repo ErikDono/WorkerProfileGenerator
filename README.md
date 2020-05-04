@@ -1,175 +1,99 @@
-# Unit 10 OOP Homework: Template Engine - Employee Summary
 
-One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, *how* we design our code is just as important as the code itself. In this homework assignment, your challenge is to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, you will also be ensuring that all unit tests pass.
+# Badges
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ErikDono/Read_Me_Gen)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/ErikDono/Read_Me_Gen)
 
-## Instructions
+![GitHub followers](https://img.shields.io/github/followers/ErikDono?style=social)
 
-You will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
 
-```
-As a manager
-I want to generate a webpage that displays my team's basic info
-so that I have quick access to emails and GitHub profiles
-```
+# Read_Me_Generator 
 
-How do you deliver this? Here are some guidelines:
+      This is a Read Me generator that runs in terminal, and allows you to create a great looking md file with low effort! 
 
-* Use the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the user for their email, id, and specific information based on their role with the company. For instance, an intern may provide their school, whereas an engineer may provide their GitHub username.
+## Table of Contents:
+* [Node-JS and My Thought Process](#Node-JS-and-My-Thought-Process)
+* [Pictures and Descriptions](#Pictures-and-Descriptions)
+* [Function Video](#Function-Video)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Tests Used](#Tests-Used)
+* [Contribution](#Contribution)
+* [Bugs](#Bugs)
+* [Future Deploys](#Future-Deploys)
+* [GitHub Info](#GitHub-Info)
 
-* Your app will run as a Node CLI to gather information about each employee.
 
-* Below is an example of what your application may look like. Remember, the styling is completely up to you so try to make it unique.
 
-![Employee Summary 1](./Assets/10-OOP-homework-demo-1.png)
-![Employee Summary 2](./Assets/10-OOP-homework-demo-2.png)
+## Node JS and My Thought Process 
 
-In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
+    This Profile Creator took some serious thinking, but was very enjoyable! I would have liked to use asynch methods, but the way it works is fine. The majority of my code is separated out into the different occupations, which allowed me to organize things a bit easier. I made separate modules for the questions, as that seemed to fit the flow of the app more. Each occupation has its own set of questions, which needed to match up with the test items. Mine match, yet I am still failing a lot of the tests. This will be talked about in more detail during the test section. I have added my own stylized CSS, as well. 
+    
+## Pictures and Descriptions 
 
-The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
+![APIphoto](/assets/API.png)
 
-There are also unit tests to help you build the classes necessary.
+``` API module ```
 
-It is recommended that you follow this workflow:
+![APIphoto](/assets/index.png)
 
-1. Run tests
-2. Create or update classes to pass a single test case
-3. Repeat
+``` Main Index ```
 
-🎗 Remember, you can run the tests at any time with `npm run test`
+![APIphoto](assets/interpolation.png)
 
-It is recommended that you start with a directory structure that looks like this:
+``` Interpolation for Read ME on Generate Markdown Module```
 
-```
-lib/           // classes and helper code
-output/        // rendered output
-templates/     // HTML template(s)
-test/          // jest tests
-  Employee.test.js
-  Engineer.test.js
-  Intern.test.js
-  Manager.test.js
-app.js         // Runs the application
-```
+![APIphoto](/assets/questions.png)
 
-### Hints
+``` Seperate Questions Module ```
 
-* Create multiple HTML templates for each type of user. For example, you could use the following templates:
+![APIphoto](/assets/readmescreen.png)
 
-  * `main.html`
+``` A Screenshot of a basic generated ReadMe file``` 
 
-  * `engineer.html`
-  
-  * `intern.html`
-  
-  * `manager.html`
+![APIphoto](/assets/writeme.png)
 
-* You will want to make your methods as pure as possible. This means try to make your methods simple so that they are easier to test.
+``` Photo of the writeme method on the Generate Markdown Module ```
 
-* The different employee types should all inherit some methods and properties from a base class of `Employee`.
 
-* In your HTML template files, you may want to add a placeholder character that helps your program identify where the dynamic markup begins and ends.
+## Function Video 
 
-## Minimum Requirements
+![FunctionVideo](/assets/function.gif)
 
-* Functional application.
+## Installation
+      This  uses Inquier and Axios, but you should just be able to run NPM Install 
 
-* GitHub repository with a unique name and a README describing the project.
+## Usage
+      Users can feel free to put their items in, and make a basic template for thir readme file in their bash/terminal.  
 
-* User can use the CLI to generate an HTML page that displays information about their team.
+## License:
+      1.0.0 
 
-* All tests must pass.
+## Tests Used:
+      none, but maybe soon! 
 
-### Classes
-The project must have the these classes: `Employee`, `Manager`, `Engineer`,
-`Intern`. The tests for these classes in the `tests` directory must all pass.
+## Contribution:
+      Feel free to email me, and ask for permission. 
 
-The first class is an `Employee` parent class with the following properties and
-methods:
+## Bugs:
+      You cannot skip either GitHub line, as the axios catch error did not work as intended. Also, you cannot enter more than one contributor at this point.
 
-  * name
-  * id
-  * email
-  * getName()
-  * getId()
-  * getEmail()
-  * getRole() // Returns 'Employee'
+## Future Deploys:
+      I would like to move ask to the questions page, as i know it is possible, and i feel like i came very close. 
 
-The other three classes will extend `Employee`. 
+      I would also like to make the applciation take in multiple names for contributors. I think it would be a forEach... but i am unsure. 
 
-In addition to `Employee`'s properties and methods, `Manager` will also have:
+      I would also like to make a functionable html modlue that will create an hmtl page with the ReadMe's info, so that you can edit it.  
 
-  * officeNumber
 
-  * getRole() // Overridden to return 'Manager'
+## Git Hub Info:
+### Name
+  :feelsgood:  ErikDono
+### Picture:
+![GitHubAvatar](https://avatars2.githubusercontent.com/u/61159557?v=4) 
 
-In addition to `Employee`'s properties and methods, `Engineer` will also have:
+### Email:
+      erik.dono@gmail.com 
 
-  * github  // GitHub username
-
-  * getGithub()
-
-  * getRole() // Overridden to return 'Engineer'
-
-In addition to `Employee`'s properties and methods, `Intern` will also have:
-
-  * school 
-
-  * getSchool()
-
-  * getRole() // Overridden to return 'Intern'
-
-### User input
-
-The project must prompt the user to build an engineering team. An engineering
-team consists of a manager, and any number of engineers and interns.
-
-### Roster output
-
-The project must generate a `team.html` page in the `output` directory, that displays a nicely formatted team roster. Each team member should display the following in no particular order:
-
-  * Name
-
-  * Role
-
-  * ID
-
-  * Role-specific property (School, link to GitHub profile, or office number)
-
-## Bonus
-
-* Use validation to ensure that the information provided is in the proper expected format.
-
-* Add the application to your portfolio.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the GitHub repository
-
-* A video demonstrating the entirety of the app's functionality 
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+        
