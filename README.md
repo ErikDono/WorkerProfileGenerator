@@ -47,12 +47,16 @@
 
 ## Tests Used:
   * Employee.test   
+
    Passes!
   * Engineer.test
+
    Fails, says that Engineer is not a constructor. It is...
   * Intern.test
+  
    Fails, says that Intern is not a constructor. It is...
   * Manager.test
+  
    Fails, says that Manager is not a constructor. It is...
 
 ## Contribution:
