@@ -33,8 +33,8 @@
 
 ## Function Video 
 
-![FunctionVideo](/assets/function.gif)
-![TestVideo](/assets/test.gif)
+![FunctionVideo](/Assets/function.gif)
+![TestVideo](/Assets/test.gif)
 
 ## Installation
       This  uses Inquier and Fs, but you should just be able to run NPM Install 
