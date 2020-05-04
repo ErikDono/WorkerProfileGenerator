@@ -9,7 +9,7 @@
 
 # Read_Me_Generator 
 
-      This is a Read Me generator that runs in terminal, and allows you to create a great looking md file with low effort! 
+      This is a profile creator page for employers, that allows a manager to originize his personel files into one page! 
 
 ## Table of Contents:
 * [Node-JS and My Thought Process](#Node-JS-and-My-Thought-Process)
