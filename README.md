@@ -13,7 +13,6 @@
 
 ## Table of Contents:
 * [Node-JS and My Thought Process](#Node-JS-and-My-Thought-Process)
-* [Pictures and Descriptions](#Pictures-and-Descriptions)
 * [Function Video](#Function-Video)
 * [Installation](#Installation)
 * [Usage](#Usage)
@@ -28,63 +27,43 @@
 
 ## Node JS and My Thought Process 
 
-    This Profile Creator took some serious thinking, but was very enjoyable! I would have liked to use asynch methods, but the way it works is fine. The majority of my code is separated out into the different occupations, which allowed me to organize things a bit easier. I made separate modules for the questions, as that seemed to fit the flow of the app more. Each occupation has its own set of questions, which needed to match up with the test items. Mine match, yet I am still failing a lot of the tests. This will be talked about in more detail during the test section. I have added my own stylized CSS, as well. 
-    
-## Pictures and Descriptions 
+    This Profile Creator took some serious thinking, but was very enjoyable! I would have liked to use asynch methods, but the way it works is fine. The majority of my code is separated out into the different occupations, which allowed me to organize things a bit easier. I made separate modules for the questions, as that seemed to fit the flow of the app more. Each occupation has its own set of questions, which needed to match up with the test items. The questions ask for information unique to each occupation, but also ask what occupation they'd like to input next. The app allows the user to stop at either the end point of each input, or if they mistakenly said yes to creating a new employee. So far, my named objects and functions match but I am still failing a lot of the tests. This will be talked about in more detail during the test section. I have added my own stylized CSS, as well. The HTML is generated into an output folder. 
 
-![APIphoto](/assets/API.png)
-
-``` API module ```
-
-![APIphoto](/assets/index.png)
-
-``` Main Index ```
-
-![APIphoto](assets/interpolation.png)
-
-``` Interpolation for Read ME on Generate Markdown Module```
-
-![APIphoto](/assets/questions.png)
-
-``` Seperate Questions Module ```
-
-![APIphoto](/assets/readmescreen.png)
-
-``` A Screenshot of a basic generated ReadMe file``` 
-
-![APIphoto](/assets/writeme.png)
-
-``` Photo of the writeme method on the Generate Markdown Module ```
 
 
 ## Function Video 
 
 ![FunctionVideo](/assets/function.gif)
+![TestVideo](/assets/test.gif)
 
 ## Installation
-      This  uses Inquier and Axios, but you should just be able to run NPM Install 
+      This  uses Inquier and Fs, but you should just be able to run NPM Install 
 
 ## Usage
-      Users can feel free to put their items in, and make a basic template for thir readme file in their bash/terminal.  
+     Managers can use this to create quick profile pages for their employees.  
 
 ## License:
       1.0.0 
 
 ## Tests Used:
-      none, but maybe soon! 
+  * Employee.test   
+   - Passes!
+  * Engineer.test
+   - Fails, says that Engineer is not a constructor. It is...
+  * Intern.test
+   - Fails, says that Intern is not a constructor. It is...
+  * Manager.test
+   - Fails, says that Manager is not a constructor. It is...
 
 ## Contribution:
       Feel free to email me, and ask for permission. 
 
 ## Bugs:
-      You cannot skip either GitHub line, as the axios catch error did not work as intended. Also, you cannot enter more than one contributor at this point.
+      Constructor functions exist but do not pass tests. 
 
 ## Future Deploys:
-      I would like to move ask to the questions page, as i know it is possible, and i feel like i came very close. 
-
-      I would also like to make the applciation take in multiple names for contributors. I think it would be a forEach... but i am unsure. 
-
-      I would also like to make a functionable html modlue that will create an hmtl page with the ReadMe's info, so that you can edit it.  
+      Future changes to the CSS
+      Make more dynamic for user choices
 
 
 ## Git Hub Info:
