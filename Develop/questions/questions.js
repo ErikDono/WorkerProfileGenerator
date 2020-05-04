@@ -1,5 +1,5 @@
 module.exports = {
     questions: [
-        { type: "list", name: "occupation", message: "What is your occupation?", choices: ["Employee", "Engineer", "Intern", "Manager"] },
+        { type: "list", name: "occupation", message: "What is your occupation?", choices: ["Engineer", "Intern", "None"] },
     ],
 }

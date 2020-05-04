@@ -1,44 +1,145 @@
 const Manager = require("./lib/Manager").Manager;
-const Engineer = require("./lib/Engineer");
+const Engineer = require("./lib/Engineer").Engineer;
 const Intern = require("./lib/Intern").Intern;
 const inquirer = require("inquirer");
+const fs = require("fs")
 const path = require("path")
 const { managerQuestions } = require("./questions/managerQuestions")
+const { engineerQuestions } = require("./questions/engineerQuestions")
+const { internQuestions } = require("./questions/internQuestions")
 const render = require("./lib/htmlRenderer")
 const { questions } = require("./questions/questions");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 
-const EmployeeList = [
+const Team = [
 
 ]
 
 
-inquirer.prompt(questions).then(answers => {
-
-    if (answers.occupation == "Manager") {
+function init() {
+    function manager() {
         inquirer.prompt(managerQuestions).then(answers => {
             console.log(answers.officeNumber)
-            const employee = new Manager(answers.officeNumber, answers.name, answers.email, answers.ID)
-            console.log(employee.getEmail())
-            EmployeeList.push(employee)
-        })
-    }
-    if (answers.occupation == "Engineer") {
-        const employee = new Engineer(answers.emp_name)
-        console.log(employee.getName(), employee.getRole())
-        EmployeeList.push(employee)
-    }
-    if (answers.occupation == "Intern") {
-        const employee = new Intern(answers.emp_name)
-        console.log(employee.getName())
-        EmployeeList.push(employee)
-    }
-    return answers
-}).catch(err => err)
+            const employee = new Manager(answers.name, answers.email, answers.ID, answers.officeNumber)
+            console.log(employee.getOfficeNumber())
+            Team.push(employee)
 
-// render(Employees)
+            if (answers.choice === true) {
+
+                function mainQuestions() {
+
+                    inquirer.prompt(questions).then(answers => {
+
+                        function intern() {
+                            inquirer.prompt(internQuestions).then(answers => {
+                                console.log(answers.school)
+                                const employee = new Intern(answers.name, answers.email, answers.ID, answers.school)
+                                console.log(employee.getSchool())
+                                Team.push(employee)
+                                if (answers.choice === true) {
+                                    mainQuestions()
+                                }
+                                else {
+                                    fs.writeFileSync("team.html", render(Team))
+                                }
+                            })
+
+                        }
+                        function engineer() {
+                            inquirer.prompt(engineerQuestions).then(answers => {
+                                console.log(answers.gitHub)
+                                const employee = new Engineer(answers.name, answers.email, answers.ID, answers.gitHub)
+                                console.log(employee.getGithub())
+                                Team.push(employee)
+                                if (answers.choice === true) {
+                                    mainQuestions()
+                                }
+                                else {
+                                    fs.writeFileSync("team.html", render(Team))
+                                }
+                            })
+
+                        }
+
+                        if (answers.occupation === "Intern") {
+                            intern()
+                        }
+                        else if (answers.occupation === "Engineer") {
+                            engineer()
+                        }
+                        else {
+                            fs.writeFileSync("team.html", render(Team))
+                        }
+
+                    })
+                }
+
+                mainQuestions()
+
+            } else {
+                fs.writeFileSync("team.html", render(Team))
+            }
+
+        }).catch(err => err)
+
+
+    }
+
+    manager()
+
+    // inquirer.prompt(questions).then(answers => {
+
+    // function manager() {
+    //     inquirer.prompt(managerQuestions).then(answers => {
+    //         console.log(answers.officeNumber)
+    //         const employee = new Manager(answers.officeNumber, answers.name, answers.email, answers.ID)
+    //         console.log(employee.getOfficeNumber())
+    //         EmployeeList.push(employee)
+    //     })
+    //     }
+
+
+    //     if (answers.occupation == "Manager") {
+    //         manager()
+    //     }
+    //     if (answers.occupation == "Engineer") {
+    //         inquirer.prompt(engineerQuestions).then(answers => {
+    //             console.log(answers.gitHub)
+    //             console.log(answers.email)
+    //             const employee = new Engineer(answers.name, answers.email, answers.ID, answers.gitHub)
+    //             console.log(employee.getGitHub())
+    //             console.log(employee.getRole())
+    //             EmployeeList.push(employee)
+    //         })
+    //     }
+    //     if (answers.occupation == "Intern") {
+    //         inquirer.prompt(internQuestions).then(answers => {
+    //             console.log(answers.school)
+    //             const employee = new Intern(answers.school, answers.name, answers.email, answers.ID, answers.again)
+    //             // if (employee.again === "Yes") {
+    //             //     init();
+    //             //     console.log(employee.getSchool());
+    //             //     EmployeeList.push(employee)
+    //             // }
+    //             // else {
+    //             //     console.log(employee.getSchool())
+    //             //     EmployeeList.push(employee)
+    //             //     return ("Goodbye!")
+    //             // }
+    //             console.log(employee.getSchool())
+    //             EmployeeList.push(employee)
+
+    //         })
+
+    //     }
+    //     return answers
+}
+
+
+
+init()
 
 
 
