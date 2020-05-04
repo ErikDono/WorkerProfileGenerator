@@ -26,6 +26,7 @@ function init() {
             console.log(employee.getOfficeNumber())
             Team.push(employee)
 
+
             if (answers.choice === true) {
 
                 function mainQuestions() {
